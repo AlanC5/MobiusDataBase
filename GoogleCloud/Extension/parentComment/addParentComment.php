@@ -31,7 +31,6 @@ if (isset($_POST['addParentComment']) && !empty($_POST['addParentComment'])) {
 
           // Returns the last intserted Primary Key
           $pAnnotationId = $DB->lastInsertId();
-          echo "Successfully Saved";
 
           // Insert into respective annotationType table
           switch ($annotationType) {
@@ -40,11 +39,18 @@ if (isset($_POST['addParentComment']) && !empty($_POST['addParentComment'])) {
                 $textPosition = $_POST['textPosition'];
 
                 $insert = $DB->prepare("INSERT INTO textAnnotation (annotationId, pAnnotationId, annotatedText, textPosition) VALUES (:annotationId, :pAnnotationId, :annotatedText, :textPosition)");
-                $insert->execute(array(':annotationId' => NULL, ':pAnnotationId' => $pAnnotationId, ':annotatedText' => $annotatedText, ':textPosition' => $textPosition));
+                if($insert->execute(array(':annotationId' => NULL, ':pAnnotationId' => $pAnnotationId, ':annotatedText' => $annotatedText, ':textPosition' => $textPosition))) {
+                  echo "Successfully Saved Text Annotation";
+                }
                 break;
 
             case "youtubeVideo":
-                //$insert= $DB->prepare("");
+                $annotatedTime = $_POST['annotatedTime'];
+
+                $insert = $DB->prepare("INSERT INTO youtubeVideoAnnotation (annotationId, pAnnotationId, annotatedTime) VALUES (:annotationId, :pAnnotationId, :annotatedTime)");
+                if($insert->execute(array(':annotationId' => NULL, ':pAnnotationId' => $pAnnotationId, ':annotatedTime' => $annotatedTime))) {
+                  echo "Successfully Saved Youtube Video Annotation";
+                }
                 break;
 
             case "image":
