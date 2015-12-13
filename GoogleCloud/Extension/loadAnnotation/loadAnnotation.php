@@ -51,12 +51,23 @@ if (isset($_POST['loadAnnotation']) && !empty($_POST['loadAnnotation'])) {
               break;
 
             case "youtubeVideo":
-                //$insert= $DB->prepare("");
-                break;
+              $typeStatement = $DB->prepare("SELECT * FROM youtubeVideoAnnotation WHERE pAnnotationId = :pAnnotationId");
+              $typeStatement->execute(array(':pAnnotationId' => $annotationRow["pAnnotationId"]));
+              $typeStatementCount = $typeStatement->rowCount();
+              if ($typeStatementCount > 0) {
+                $typeStatement->setFetchMode(PDO::FETCH_ASSOC);
+                $typeStatementRow = $typeStatement->fetch();
+
+                $annotatedTime = $typeStatementRow["annotatedTime"];
+
+                $listofParentComment[] = array("pAnnotationId" => $annotationRow["pAnnotationId"], "comment" => $annotationRow["comment"], "likes" => $annotationRow["likes"], "annotationType" => $annotationRow["annotationType"], "saveDate" => $annotationRow["saveDate"], "color" => $annotationRow["color"], "annotatedTime" => $annotatedTime);
+              }
+              break;
+
 
             case "image":
-                //insert SQL statements
-                break;
+              //insert SQL statements
+              break;
           }
         }
 
