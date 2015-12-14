@@ -20,12 +20,19 @@ if (isset($_POST['loadAnnotation']) && !empty($_POST['loadAnnotation'])) {
 			$row = $statement->fetch();
       $articleId = $row["articleId"];
 
+      $archiveStatement = $DB->prepare("SELECT archiveName FROM archive WHERE archiveId = :archiveId");
+      $archiveStatement->execute(array(':archiveId' => $row["archiveId"]));
+      $archiveStatement->setFetchMode(PDO::FETCH_ASSOC);
+      $archiveRow = $archiveStatement->fetch();
+
+      $listofParentComment = array();
+      $listofParentComment[] = array("articleId" => $articleId, "articleName" => $row["articleName"], "description" => $row["description"], "private" => $row["private"], "archiveId" => $row["archiveId"], "archiveName" => $archiveRow["archiveName"]);
+
+
       $statement = $DB->prepare("SELECT * FROM parentAnnotation WHERE articleId = :articleId");
       $statement->execute(array(':articleId' => $articleId));
       $annotationCount = $statement->rowCount();
 
-      $listofParentComment = array();
-      $listofParentComment[] = array("articleId" => $articleId);
 
       if ($annotationCount > 0) {
         $statement->setFetchMode(PDO::FETCH_ASSOC);
@@ -70,10 +77,9 @@ if (isset($_POST['loadAnnotation']) && !empty($_POST['loadAnnotation'])) {
               break;
           }
         }
-
-        echo json_encode($listofParentComment);
-
       }
+
+      echo json_encode($listofParentComment);
 
 		}
 

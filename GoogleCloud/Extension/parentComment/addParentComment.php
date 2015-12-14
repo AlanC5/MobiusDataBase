@@ -40,7 +40,8 @@ if (isset($_POST['addParentComment']) && !empty($_POST['addParentComment'])) {
 
                 $insert = $DB->prepare("INSERT INTO textAnnotation (annotationId, pAnnotationId, annotatedText, textPosition) VALUES (:annotationId, :pAnnotationId, :annotatedText, :textPosition)");
                 if($insert->execute(array(':annotationId' => NULL, ':pAnnotationId' => $pAnnotationId, ':annotatedText' => $annotatedText, ':textPosition' => $textPosition))) {
-                  echo "Successfully Saved Text Annotation";
+                  $messageContainer = array($pAnnotationId, "Successfully Saved Text Annotation");
+                  echo json_encode($messageContainer);
                 }
                 break;
 
@@ -49,7 +50,8 @@ if (isset($_POST['addParentComment']) && !empty($_POST['addParentComment'])) {
 
                 $insert = $DB->prepare("INSERT INTO youtubeVideoAnnotation (annotationId, pAnnotationId, annotatedTime) VALUES (:annotationId, :pAnnotationId, :annotatedTime)");
                 if($insert->execute(array(':annotationId' => NULL, ':pAnnotationId' => $pAnnotationId, ':annotatedTime' => $annotatedTime))) {
-                  echo "Successfully Saved Youtube Video Annotation";
+                  $messageContainer = array($pAnnotationId, "Successfully Saved Youtube Video Annotation");
+                  echo json_encode($messageContainer);
                 }
                 break;
 
