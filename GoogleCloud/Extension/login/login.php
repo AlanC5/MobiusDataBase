@@ -3,6 +3,23 @@
 	require('../../config.php');
 	//calls on config.php - the file you should have looked at first and created the a database for
 	//for this file start trying to understand from after the "start here" comment
+if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'status') {
+	session_start();
+
+
+	if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) {
+		echo "Already Logged In";
+		exit();
+	}
+
+	else {
+		echo "Not Logged In";
+	}
+
+}
+
+
+
 
 	if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'login') {
 
