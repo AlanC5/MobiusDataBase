@@ -10,6 +10,8 @@ CREATE TABLE user (
 	PRIMARY KEY (userid)
 ) ENGINE=InnoDB;
 
+# NEEDS TO ADD datetime to archive table
+
 # archive
 CREATE TABLE archive (
 	archiveId int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -18,6 +20,7 @@ CREATE TABLE archive (
 	icon varchar(20) NOT NULL,
 	description text,
   private tinyint(1) NOT NULL,
+	saveDate datetime NOT NULL,
 	PRIMARY KEY (archiveid)
 ) ENGINE=InnoDB;
 

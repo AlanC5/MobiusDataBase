@@ -8,7 +8,7 @@ if (isset($_POST['requestArchive']) && !empty($_POST['requestArchive'])) {
 
   try {
 
-    // Check if article exists prior to saving
+    // Check if archive exists prior to returning array of archives
     $statement = $DB->prepare("SELECT * FROM archive WHERE userId = :userId");
     $statement->execute(array(':userId' => $userId));
     $count = $statement->rowCount();

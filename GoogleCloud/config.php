@@ -1,5 +1,5 @@
 <?php
-$host = "mysql:unix_socket=/cloudsql/mobius-1:extension;dbname=mobiusTestData";
+$host = "mysql:unix_socket=/cloudsql/mobi-1171:mobiusdb;dbname=mobiusTestData";
 $username = "root";
 $password = "";
 
