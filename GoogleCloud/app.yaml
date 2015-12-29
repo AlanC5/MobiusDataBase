@@ -19,6 +19,12 @@ handlers:
 - url: /Extension/addArticle
   script: /Extension/article/addArticle.php
 
+- url: /Extension/updateArticle
+  script: /Extension/article/updateArticle.php
+
+- url: /Extension/deleteArticle
+  script: /Extension/article/deleteArticle.php
+
 - url: /Extension/addParentComment
   script: /Extension/parentComment/addParentComment.php
 
