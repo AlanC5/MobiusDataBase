@@ -1,21 +1,26 @@
 <?php
 session_start();
 
-if (isset($_POST['deleteArticle']) && !empty($_POST['deleteArticle'])) {
+if (isset($_POST['updateArticle']) && !empty($_POST['updateArticle'])) {
   // Create a connection.
   require('../../config.php');
   $userId = $_SESSION['userId'];
   $articleId = $_POST['articleId'];
 
+  $archiveId = $_POST['archiveId'];
+  $articleName = $_POST['articleName'];
+  $description =$_POST['description'];
+  $privacy =$_POST['privacy'];
+
   try {
 
-    // Delete article
+    // UPDATE article
     $statement = $DB->prepare("UPDATE article SET archiveId = :archiveId, articleName = :articleName, description = :description, private = :private WHERE userId = :userId AND articleId = :articleId");
-    $statement->execute(array(':userId' => $userId, ':articleId' => $articleId));
+    $statement->execute(array(':archiveId' => $archiveId, ':articleName' => $articleName, ':description' => $description, ':private' => $privacy, ':userId' => $userId, ':articleId' => $articleId));
     $count = $statement->rowCount();
 
     if ($count > 0) {
-      echo "Successfully Deleted Article";
+      echo "Successfully Updated Article";
     }
 
     else  {
