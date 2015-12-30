@@ -23,7 +23,7 @@ if (isset($_POST['createArchive']) && !empty($_POST['createArchive'])) {
     // else insert new Archive and return archive id
     else {
       $icon = $_POST['archiveIcon'];
-      $description = $_Post['archiveDescription'];
+      $description = $_POST['archiveDescription'];
       $privacy = $_POST['archivePrivacy'];
 
       $insert = $DB->prepare("INSERT INTO archive (archiveId, userId, archiveName, icon, description, private, saveDate) VALUES (:archiveId, :userId, :archiveName, :icon, :description, :private, NOW())");
@@ -31,10 +31,9 @@ if (isset($_POST['createArchive']) && !empty($_POST['createArchive'])) {
       if ($insert->execute(array('archiveId' => NULL, ':userId' => $userId, ':archiveName' => $archiveName, ':icon' => $icon, ':description' => $description, ':private' => $privacy))) {
 
         echo $DB->lastInsertId();
-        // echo "Successfully Saved";
       }
       else {
-        echo "Failed to Saved";
+        echo "Failed to Create Archive";
       }
     }
 
