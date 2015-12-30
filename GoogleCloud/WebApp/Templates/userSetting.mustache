@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Setting</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost/website/Offline Resources/font-awesome-4.4.0/css/font-awesome.min.css"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="http://localhost/website/styles/nav.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost/website/styles/userSetting.css">
+  </head>
+
+  <body>
+    {{> Partials/menu }}
+
+    <div id="main-content-container">
+      <div id="navigation">
+        {{> Partials/top-nav }}
+          <div id="nav-heading">
+            <div id="user-setting-left"></div>
+            <div id="user-setting-center">
+              <div id="user-image-container">
+                <div id="user-pic" style="background:url({{userImage}}) 50% 50% / cover no-repeat;">
+                  <input type="file" id="img_file">
+                </div>
+              </div>
+              <div id="user-name-nav-container">
+                <div id="name-container">
+                  <input type="text" id="name-input" placeholder="" value="">
+        					<span id="current-name">{{name}}</span>
+                </div>
+                <div id="content-nav">
+                  <span class="color-transition content-nav-span selected-content-nav">Email</span>
+                  <span class="color-transition content-nav-span">Password</span>
+                </div>
+              </div>
+            </div>
+            <div id="update-notification">
+              <div id="update-container">
+                <span id="update-message"></span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="content-body">
+        <div id="email-body" class="sub-content-body">
+          <span>Your email is used to Login and receive updates.</span>
+          <input type="email" id="new-email" class="email-transparent" placeholder="Type New Email" value="">
+        </div>
+        <div id="password-body" class="sub-content-body inactive-info">
+          <div>
+            <div id="old-pass-container" class="password-container" style="margin-bottom: 20px;">
+              <input type="password" id="old-password" class="password-input" placeholder="Type Old Password" value="">
+              <div class="my-toggle hideShowPassword-toggle-hide" style="position: absolute;">SHOW</div>
+            </div>
+          </div>
+          <div>
+            <div id="new-pass-container" class="password-container">
+              <input type="password" id="new-password" class="password-input" placeholder="Type New Password" value="">
+              <div class="my-toggle hideShowPassword-toggle-hide" style="position: absolute;">SHOW</div>
+            </div>
+          </div>
+          <div id="submit-button">
+            <span>Change Password</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost/website/Offline Resources/jquery-1.11.2.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="http://localhost/website/scripts/autosizeWidth.js"></script>
+    <script src="http://localhost/website/scripts/nav.js"></script>
+    <script src="http://localhost/website/scripts/userSetting.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recent</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost/website/Offline Resources/font-awesome-4.4.0/css/font-awesome.min.css"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="http://localhost/website/styles/nav.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost/website/styles/recent.css">
+  </head>
+
+  <body>
+    {{> Partials/menu }}
+
+    <div id="main-content-container">
+      <div id="navigation">
+        {{> Partials/top-nav }}
+          <div id="nav-heading">
+            <div id="recent-left">
+
+            </div>
+            <div id="recent-center">
+              <span>Recent</span>
+            </div>
+            <div id="update-notification">
+              <div id="update-container">
+                <span id="update-message">{{updateMessage}}</span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="content-body">
+        <div id ="article-body">
+          <div id="articles">
+            <div class="content-panel">
+              <ul id="og-grid" class="og-grid">
+                {{#article}}
+                <li>
+                  <div class="content-container">
+                    <a href="{{articleLink}}" data-title="{{articleName}}" data-author="{{author}}" data-authorImg="{{authorImg}}" data-privacy="{{private}}" data-description="{{description}}" data-locationArchiveIcon="{{locationArchiveIcon}}" data-locationArchive="{{locationArchive}}">
+                      <div style="background-image: url({{articleImg}});"></div>
+                    </a>
+                    <p class="content-text">{{articleName}}</p>
+                  </div>
+                </li>
+                {{/article}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost/website/Offline Resources/jquery-1.11.2.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="http://localhost/website/scripts/nav.js"></script>
+    <script src="http://localhost/website/scripts/recent.js"></script>
+  </body>
+</html>

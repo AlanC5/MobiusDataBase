@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost/website/Offline Resources/font-awesome-4.4.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="http://localhost/website/styles/nav.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost/website/styles/archive.css">
+  </head>
+
+  <body>
+    {{> Partials/menu }}
+
+    <div id="main-content-container">
+      <div id="navigation">
+        {{> Partials/top-nav }}
+          <div id="nav-heading">
+            <div id="archive-privacy">
+              <div id="privacy-container">
+                <div id="privacy-click">
+                  {{#private}}
+                    <i class="fa fa-lock"></i>
+                    <span style="margin-left: 8px;">Private</span>
+                  {{/private}}
+                  {{^private}}
+                    <i class="fa fa-globe"></i>
+                    <span>Public</span>
+                  {{/private}}
+                </div>
+                <div id="privacy-dropdown" class="invisible">
+                  <div id="global" class="privacy-dropdown-option">
+                    <i class="fa fa-globe"></i>
+                    <span>Public</span>
+                  </div>
+                  <div id="private" class="privacy-dropdown-option">
+                    <i class="fa fa-lock"></i>
+                    <span style="margin-left: 8px;">Private</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="archive-center">
+              <div id="symbol-container">
+                <div id="symbol-click"><i class="fa fa-{{icon}}"></i></div>
+      					<div id="symbol-dropdown" class="invisible">
+      						<div class="symbol-dropdown-option"><i class="fa fa-leaf"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-university"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-plane"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-money"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-music"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-glass"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-flask"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-book"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-cutlery"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-wrench"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-gamepad"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-line-chart"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-futbol-o"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-flash"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-lightbulb-o"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-paint-brush"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-camera-retro"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-film"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-heart"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-language"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-magic"></i></div>
+      					</div>
+              </div>
+              <div id="archive-title">
+                <input type="text" id="title-input" placeholder="" value="">
+      					<span id="current-title">{{title}}</span>
+              </div>
+              <div id="archive-option-container">
+                <div id="archive-option-click">
+                  <i class="fa fa-angle-down"></i>
+                  <div id="archive-option-dropdown" class="invisible">
+                    <div id="delete-archive">
+                      <i class="fa fa-trash-o"></i>
+                      <span>Delete Archive</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="update-notification">
+              <div id="update-container">
+                <span id="update-message"></span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="content-body">
+        <div id="archive-body">
+          <div id="archive-description">
+            <textarea id="description-input" tabindex="-1">{{description}}</textarea>
+          </div>
+          <div id="articles">
+            <div class="content-panel">
+              <ul id="og-grid" class="og-grid">
+                {{#article}}
+                <li>
+                  <div class="content-container">
+                    <a href="{{articleLink}}" data-articleid="{{articleId}}"data-title="{{articleName}}" data-author="{{author}}" data-authorimg="{{authorImg}}" data-privacy="{{private}}" data-description="{{description}}">
+                      <div style="background-image: url({{articleImg}});"></div>
+                    </a>
+                    <p class="content-text">{{articleName}}</p>
+                  </div>
+                </li>
+                {{/article}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost/website/Offline Resources/jquery-1.11.2.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="http://localhost/website/scripts/autosize.min.js"></script>
+    <script src="http://localhost/website/scripts/autosizeWidth.js"></script>
+    <script src="http://localhost/website/scripts/nav.js"></script>
+    <script src="http://localhost/website/scripts/archive.js"></script>
+  </body>
+</html>
