@@ -2,7 +2,7 @@
 // TO DO apply ? to read URL and detect if there is any notification to send out and display
 // Templates the most recent articles organizes by the time
 // Must contain the archivename (include in CSS and JS)
-  require('../config.php');
+  require('../../config.php');
   //calls on config.php - the file you should have looked at first and created the a database for
   session_start();
 

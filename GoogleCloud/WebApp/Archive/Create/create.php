@@ -1,6 +1,6 @@
 <?php
 	//Note that ZERO security measures has been taken
-	require('../../config.php');
+	require('../../../config.php');
 	session_start();
 	if (isset($_POST['create']) && !empty($_POST['create'])) {
 

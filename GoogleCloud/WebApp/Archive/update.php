@@ -4,7 +4,7 @@
 // Detect if PDO executed successfully
 
   if (isset($_POST['update']) && !empty($_POST['update'])) {
-    require('../config.php');
+    require('../../config.php');
 
     session_start();
 

@@ -1,7 +1,7 @@
 <?php
 // Updates Title and Password
 if (isset($_POST['updateUser']) && !empty($_POST['updateUser'])) {
-  require('../config.php');
+  require('../../config.php');
 
   session_start();
 

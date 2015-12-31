@@ -4,7 +4,7 @@
 // THE DIRECTORY IS CURRENTLY PUBLIC TO ALL, BUG NEEDS TO BE FIXED
 
 //Note that ZERO security measures has been taken
-require('../config.php');
+require('../../config.php');
 	//calls on config.php - the file you should have looked at first and created the a database for
 	//for this file start trying to understand from after the "start here" comment
 	session_start();
