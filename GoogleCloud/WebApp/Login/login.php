@@ -9,7 +9,6 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 
-		//First check if email exists or not
 		//Looks in database for matching emails and password
 		//NEED TO MAKE IT CASE SENSATIVE FOR PASSWORD
 		// BINARY keyword makes it case sensative
@@ -25,7 +24,7 @@
 			// Setting fetch mode
 			$result->setFetchMode(PDO::FETCH_ASSOC);
 			$row = $result->fetch();
-			$_SESSION['userid'] = $row['userid'];
+			$_SESSION['userId'] = $row['userId'];
 
 			exit();
 		}

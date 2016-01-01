@@ -4,8 +4,17 @@ runtime: php55
 api_version: 1
 
 handlers:
+- url: /styles
+  static_dir: WebApp/styles
+
+- url: /scripts
+  static_dir: WebApp/scripts
+
 - url: /
-  script: website.php
+  script: /WebApp/login/index.php
+
+- url: /WebApp/login
+  script: /WebApp/login/login.php
 
 - url: /Extension/login
   script: /Extension/login/login.php
