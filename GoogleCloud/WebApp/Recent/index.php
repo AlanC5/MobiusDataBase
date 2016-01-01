@@ -6,15 +6,14 @@
   //calls on config.php - the file you should have looked at first and created the a database for
   session_start();
 
-  $userid = $_SESSION['userid'];
-
+  $userId = $_SESSION['userId'];
   //register mustache library
   require '../Mustache/Autoloader.php';
   Mustache_Autoloader::register();
 
   //start the mustache engine
   $m = new Mustache_Engine(array(
-      'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/../Templates'),
+      'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/../templates'),
   ));
 
   // Grabs info for nav
@@ -25,18 +24,18 @@
   $resultArticle = $DB->prepare("SELECT
                                   user.name as 'name',
                                   user.imagefile as 'imagefile',
-                                  article.filelocation as 'filelocation',
-                                  article.articlename as 'articlename',
+                                  article.articleURL as 'articleURL',
+                                  article.articleName as 'articlename',
                                   article.private as 'private',
                                   article.description as 'description',
                                   article.imageURL as 'imageURL',
                                   archive.icon as 'icon',
-                                  archive.archivename as 'archivename'
+                                  archive.archiveName as 'archivename'
                                   FROM article
-                                  JOIN user ON article.userid = user.userid
-                                  JOIN archive ON article.archiveid = archive.archiveid
-                                  WHERE article.userid = :userid");
-  $resultArticle->execute(array(':userid' => $userid));
+                                  JOIN user ON article.userId = user.userId
+                                  JOIN archive ON article.archiveId = archive.archiveId
+                                  WHERE article.userId = :userId");
+  $resultArticle->execute(array(':userId' => $userId));
   $articleNumRows = $resultArticle->rowCount();
 
   $article = array();
@@ -48,7 +47,7 @@
       // request with userid to the user table to find name of person
       $author = $row["name"];
       $authorImg = $row["imagefile"];
-      $article[] = array("articleLink" => $row["filelocation"],
+      $article[] = array("articleLink" => $row["articleURL"],
       "articleName" => $row["articlename"],
       "author" => $author,
       "authorImg" => $authorImg,

@@ -4,7 +4,7 @@ require('../../config.php');
 
 session_start();
 if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) {
-	echo "Already Logged In";
+	echo "Logged In, redirect to /recent";
 	exit();
 }
 

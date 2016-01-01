@@ -16,6 +16,9 @@ handlers:
 - url: /WebApp/login
   script: /WebApp/login/login.php
 
+- url: /recent
+  script: /WebApp/recent/index.php
+
 - url: /Extension/login
   script: /Extension/login/login.php
 
