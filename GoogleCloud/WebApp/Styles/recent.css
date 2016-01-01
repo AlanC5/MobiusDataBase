@@ -37,6 +37,11 @@
 	height: 190px;
 }
 
+.og-grid li .content-container a {
+  background-color: #B6B6B6;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
 .og-grid li .content-container > a,
 .og-grid li .content-container > a div {
 	border: none;
@@ -76,8 +81,8 @@
 
 .og-grid li  .content-container > a div {
 	-webkit-filter: brightness(70%) contrast(90%);
-  	filter: brightness(70%) contrast(90%);
-  	-webkit-transition: all 0.5s ease-in-out;
+  filter: brightness(70%) contrast(90%);
+  -webkit-transition: all 0.5s ease-in-out;
 }
 
 .og-grid li .content-container:hover > a div {
@@ -86,6 +91,9 @@
 	-webkit-transition: -webkit-filter 0.5s ease-in-out;
 }
 
+.og-grid li .content-container:hover > a {
+  background-color: #F5F5F5;
+}
 
 .og-grid li .content-container:hover > .content-text {
 	opacity: 0;
