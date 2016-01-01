@@ -11,10 +11,10 @@
 
 	//start the mustache engine
 	$m = new Mustache_Engine(array(
-	    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/../../Templates'),
+	    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/../../templates'),
 	));
 
-	$userid = $_SESSION['userid'];
+	$userId = $_SESSION['userId'];
 
 	// Grabs info for nav
 	require('../../nav.php');

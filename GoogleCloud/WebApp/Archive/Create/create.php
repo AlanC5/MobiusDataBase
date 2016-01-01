@@ -5,14 +5,14 @@
 	if (isset($_POST['create']) && !empty($_POST['create'])) {
 
 		if($_POST['create'] == "newArchive") {
-			$userid = $_SESSION['userid'];
+			$userId = $_SESSION['userId'];
 
 			$title = $_POST['title'];
 
 			//First check if archive exists or not
 			//Looks in database for matching archives
-			$result = $DB->prepare("SELECT * FROM archive WHERE archivename = :title AND userid = :userid");
-			$result->execute(array(':title' => $title, ':userid' => $userid));
+			$result = $DB->prepare("SELECT * FROM archive WHERE archiveName = :title AND userId = :userId");
+			$result->execute(array(':title' => $title, ':userId' => $userId));
 			//Counts the number of rows that archives are equal, should be 1
 			$count = $result->rowCount();
 
@@ -31,8 +31,8 @@
 				if ($_POST['privacy'] == 'Private') {
 					$private = 1;
 				}
-				$insertArchive = $DB->prepare("INSERT INTO archive (archiveid, userid, archivename, icon, description, private) VALUES (:archiveid, :userid, :title, :icon, :description, :private)");
-				$insertArchive->execute(array(':archiveid' => NULL, ':userid' => $userid, ':title' => $title, ":icon" => $icon, ":description" => $description, ":private" => $private));
+				$insertArchive = $DB->prepare("INSERT INTO archive (archiveId, userId, archiveName, icon, description, private) VALUES (:archiveId, :userId, :title, :icon, :description, :private)");
+				$insertArchive->execute(array(':archiveId' => NULL, ':userId' => $userId, ':title' => $title, ":icon" => $icon, ":description" => $description, ":private" => $private));
 
 				$id = $DB->lastInsertId();
 

@@ -16,32 +16,32 @@
 
 		//start the mustache engine
 		$m = new Mustache_Engine(array(
-		    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/../Templates'),
+		    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/../templates'),
 		));
-		$userid = $_SESSION['userid'];
+		$userId = $_SESSION['userId'];
 
 		// Grabs info for nav
 		require('../nav.php');
 
-		// Grabs archiveid with userid and archive name, archiveid is unique to every single archive even if they have the same name
-		$selectedArchive = $DB->prepare("SELECT * FROM archive WHERE userid = :userid AND archiveid = :archiveid");
-		$selectedArchive->execute(array(':userid' => $userid, ':archiveid' => $archiveIdentifier));
+		// Grabs archiveId with userId and archive name, archiveId is unique to every single archive even if they have the same name
+		$selectedArchive = $DB->prepare("SELECT * FROM archive WHERE userId = :userId AND archiveId = :archiveId");
+		$selectedArchive->execute(array(':userId' => $userId, ':archiveId' => $archiveIdentifier));
 		$archiveNumRows = $selectedArchive->rowCount();
 
 		if ($archiveNumRows > 0) {
 			$selectedArchive->setFetchMode(PDO::FETCH_ASSOC);
 			$row = $selectedArchive->fetch();
-			$archiveId = $row["archiveid"];
+			$archiveId = $row["archiveId"];
 			$archiveIcon = $row["icon"];
-			$archiveName = $row["archivename"];
+			$archiveName = $row["archiveName"];
 			$archiveDescription = $row["description"];
 			$archivePrivate = $row["private"];
 
-			$_SESSION['archiveid'] = $archiveId;
+			$_SESSION['archiveId'] = $archiveId;
 
-			// Grabs articles located in the specific archiveid
-			$resultArticle = $DB->prepare("SELECT * FROM article JOIN user ON article.userid = user.userid WHERE archiveid = :archiveid");
-			$resultArticle->execute(array(':archiveid' => $archiveId));
+			// Grabs articles located in the specific archiveId
+			$resultArticle = $DB->prepare("SELECT * FROM article JOIN user ON article.userId = user.userId WHERE archiveId = :archiveId");
+			$resultArticle->execute(array(':archiveId' => $archiveId));
 			$articleNumRows = $resultArticle->rowCount();
 
 			$article = array();
@@ -50,9 +50,9 @@
 				$resultArticle->setFetchMode(PDO::FETCH_ASSOC);
 
 				while ($row = $resultArticle->fetch()) {
-					// request with userid to the user table to find name of person
+					// request with userId to the user table to find name of person
 
-					$article[] = array("articleLink" => $row["filelocation"], "articleId" => $row["articleid"], "articleName" => $row["articlename"], "author" => $row["name"], "authorImg" => $row["imagefile"], "private" => $row["private"], "description" => $row["description"], "articleImg" => $row["imageURL"]);
+					$article[] = array("articleLink" => $row["articleURL"], "articleId" => $row["articleId"], "articleName" => $row["articleName"], "author" => $row["name"], "authorImg" => $row["imagefile"], "private" => $row["private"], "description" => $row["description"], "articleImg" => $row["imageURL"]);
 				}
 			}
 

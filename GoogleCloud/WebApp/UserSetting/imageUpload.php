@@ -3,6 +3,10 @@
 // Change the directory owner for move_uploaded_file to work
 // THE DIRECTORY IS CURRENTLY PUBLIC TO ALL, BUG NEEDS TO BE FIXED
 
+
+// THIS TABLE HAS NOT BEEN CREATED MUST CREATE TABLE
+
+
 //Note that ZERO security measures has been taken
 require('../../config.php');
 	//calls on config.php - the file you should have looked at first and created the a database for
@@ -11,7 +15,7 @@ require('../../config.php');
 	// Store file using a more direct method so it stores better in DateTimeImmutable
 
 	if (isset($_GET['files'])) {
-		$uploaddir = '../UserImages/';
+		$uploaddir = '../userImages/';
 		$filename = $_FILES["file"]["name"];
 
 		// Check file type (only allows png,jpeg, and jpg)
@@ -37,14 +41,14 @@ require('../../config.php');
 				// Uploads the file
 				move_uploaded_file($_FILES["file"]["tmp_name"], $uploaddir . basename($filename));
 
-				$uploaddir = 'http://localhost/website/UserImages/';
-        $filepath = $uploaddir . basename($filename);
-				$userid = $_SESSION['userid'];
-        $insert = $DB->prepare("INSERT INTO profileimage (imageid, userid, filepath, dateuploaded) VALUES (:imageid, :userid, :filepath, NOW())");
-        $insert->execute(array(':imageid' => NULL, ':userid' => $userid, ':filepath' => $filepath));
+				$uploaddir = 'http://mobius-website-1.appspot.com/userImages/';
+        $filePath = $uploaddir . basename($filename);
+				$userId = $_SESSION['userId'];
+        $insert = $DB->prepare("INSERT INTO profileImage (imageId, userId, filePath, dateUploaded) VALUES (:imageId, :userId, :filePath, NOW())");
+        $insert->execute(array(':imageId' => NULL, ':userId' => $userId, ':filePath' => $filePath));
 
-        $update = $DB->prepare("UPDATE user SET imagefile = :filepath WHERE userid = :userid");
-        $update->execute(array(':filepath' => $filepath, ':userid' => $userid));
+        $update = $DB->prepare("UPDATE user SET imagefile = :filePath WHERE userId = :userId");
+        $update->execute(array(':filePath' => $filePath, ':userId' => $userId));
 				echo "Updated";
 			}
 		}

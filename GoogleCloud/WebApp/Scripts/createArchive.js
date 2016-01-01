@@ -1,4 +1,8 @@
 // Prior to sending data via AJAX, confirm title and icon are set
+
+// var AJAX_URL =  "http://mobi-1171.appspot.com/";
+var AJAX_URL = "http://mobius-website-1.appspot.com/";
+
 $(document).ready(function() {
   $("#title-input").autoGrowInput({minWidth: 100,comfortZone:0});
   autosize($("#description-input"));
@@ -167,7 +171,7 @@ function submitData() {
       icon = icon.replace('fa fa-', '');
 
       $.ajax({
-        url: "http://localhost/website/archive/create/create.php",
+        url: AJAX_URL + "WebApp/createArchive",
         type: "post",
         data: {'create' : 'newArchive',
                 'title' : title, 'icon' : icon,
@@ -180,7 +184,7 @@ function submitData() {
           if (!isNaN(data)) {
             console.log(data);
             $updateContainer = $("#update-container");
-            window.location = "http://localhost/website/archive/index.php?archive=" + data;
+            // window.location = "http://localhost/website/archive/index.php?archive=" + data;
             $("#update-message").text("Created Archive");
             $updateContainer.css({"opacity" : "1"});
             setTimeout(function(){ $updateContainer.css("opacity", "0"); },2000);

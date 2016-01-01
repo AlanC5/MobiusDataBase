@@ -40,6 +40,7 @@ function submitLoginInfo() {
           alert(data);
           if (data == "Already Logged In" || data == "Logged In") {
             $("#mobius-login-body").hide();
+            window.location = AJAX_URL + "recent";
           }
         },
         error: function(xhr, desc, err) {

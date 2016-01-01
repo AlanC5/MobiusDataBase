@@ -10,6 +10,9 @@ handlers:
 - url: /scripts
   static_dir: WebApp/scripts
 
+- url: /userImages
+  static_dir: WebApp/userImages
+
 - url: /
   script: /WebApp/login/index.php
 
@@ -18,6 +21,26 @@ handlers:
 
 - url: /recent
   script: /WebApp/recent/index.php
+
+- url: /archive/create
+  script: /WebApp/archive/create/index.php
+
+- url: /WebApp/createArchive
+  script: /WebApp/archive/create/create.php
+
+# archive index.php ?archive = ###
+
+- url: /WebApp/archive/update
+  script: /WebApp/archive/update.php
+
+- url: /userSetting
+  script: /WebApp/userSetting/index.php
+
+- url: /WebApp/userSetting/imageUpload.php?files
+  script: /WebApp/userSetting/imageUpload.php
+
+- url: /WebApp/userSetting/update
+  script: /WebApp/userSetting/update.php
 
 - url: /Extension/login
   script: /Extension/login/login.php
