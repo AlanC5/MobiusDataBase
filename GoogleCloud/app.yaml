@@ -10,6 +10,9 @@ handlers:
 - url: /Extension/login
   script: /Extension/login/login.php
 
+- url: /Extension/logout
+  script: /Extension/logout/logout.php
+
 - url: /Extension/createArchive
   script: /Extension/archive/createArchive.php
 
