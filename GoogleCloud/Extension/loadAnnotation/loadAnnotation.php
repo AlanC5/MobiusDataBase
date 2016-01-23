@@ -52,7 +52,22 @@ if (isset($_POST['loadAnnotation']) && !empty($_POST['loadAnnotation'])) {
                 $annotatedText = $typeStatementRow["annotatedText"];
                 $textPosition = $typeStatementRow["textPosition"];
 
-                $listofParentComment[] = array("pAnnotationId" => $annotationRow["pAnnotationId"], "comment" => $annotationRow["comment"], "likes" => $annotationRow["likes"], "annotationType" => $annotationRow["annotationType"], "saveDate" => $annotationRow["saveDate"], "color" => $annotationRow["color"], "annotatedText" => $annotatedText, "textPosition" => $textPosition);
+                $childStatement = $DB->prepare("SELECT * FROM childrenAnnotation WHERE pAnnotationId = :pAnnotationId");
+                $childStatement->execute(array(':pAnnotationId' => $annotationRow["pAnnotationId"]));
+                $childStatementCount = $childStatement->rowCount();
+
+                $childList = array();
+
+                if ($childStatementCount > 0) {
+                  $childStatement->setFetchMode(PDO::FETCH_ASSOC);
+
+
+                  while ($childStatementRow = $childStatement->fetch()) {
+                      array_push($childList, $childStatementRow["comment"]);
+                  }
+                }
+
+                $listofParentComment[] = array("pAnnotationId" => $annotationRow["pAnnotationId"], "comment" => $annotationRow["comment"], "likes" => $annotationRow["likes"], "annotationType" => $annotationRow["annotationType"], "saveDate" => $annotationRow["saveDate"], "color" => $annotationRow["color"], "annotatedText" => $annotatedText, "textPosition" => $textPosition, "children" => $childList);
               }
 
               break;
