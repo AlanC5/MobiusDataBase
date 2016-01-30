@@ -4,7 +4,7 @@ require('../../config.php');
 
 session_start();
 if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) {
-	echo "Logged In, redirect to /recent";
+	header("Location: http://mobius-website-1.appspot.com/recent");
 	exit();
 }
 

@@ -5,6 +5,12 @@
 	//calls on config.php - the file you should have looked at first and created the a database for
 	//for this file start trying to understand from after the "start here" comment
 	session_start();
+
+	if (!isset($_SESSION['userId']) || empty($_SESSION['userId'])) {
+  	header("Location: http://mobius-website-1.appspot.com/");
+  	exit();
+  }
+
 	if (isset($_GET['archive'])) {
 		$archiveIdentifier = $_GET['archive'];
 		// Session for archive so we don't have to grab name on client side,

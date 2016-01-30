@@ -6,6 +6,11 @@
   //calls on config.php - the file you should have looked at first and created the a database for
   session_start();
 
+  if (!isset($_SESSION['userId']) || empty($_SESSION['userId'])) {
+  	header("Location: http://mobius-website-1.appspot.com/");
+  	exit();
+  }
+
   $userId = $_SESSION['userId'];
   //register mustache library
   require '../Mustache/Autoloader.php';

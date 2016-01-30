@@ -38,9 +38,8 @@ function submitLoginInfo() {
         dataType: "text",
         success: function(data) {
           alert(data);
-          if (data == "Already Logged In" || data == "Logged In") {
-            $("#mobius-login-body").hide();
-            window.location = AJAX_URL + "recent";
+          if (data == "Already Logged In" || data == "Logged In. Welcome to Mobius.") {
+            window.location.href = AJAX_URL + "recent";
           }
         },
         error: function(xhr, desc, err) {

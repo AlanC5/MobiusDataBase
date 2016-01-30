@@ -28,7 +28,8 @@ handlers:
 - url: /WebApp/createArchive
   script: /WebApp/archive/create/create.php
 
-# archive index.php ?archive = ###
+- url: /archive
+  script: /WebApp/archive/index.php
 
 - url: /WebApp/archive/update
   script: /WebApp/archive/update.php
@@ -36,7 +37,7 @@ handlers:
 - url: /userSetting
   script: /WebApp/userSetting/index.php
 
-- url: /WebApp/userSetting/imageUpload.php?files
+- url: /WebApp/userSetting/imageUpload.php
   script: /WebApp/userSetting/imageUpload.php
 
 - url: /WebApp/userSetting/update

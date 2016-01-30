@@ -184,7 +184,7 @@ function submitData() {
           if (!isNaN(data)) {
             console.log(data);
             $updateContainer = $("#update-container");
-            // window.location = "http://localhost/website/archive/index.php?archive=" + data;
+            window.location.href = AJAX_URL + "archive?archive=" + data;
             $("#update-message").text("Created Archive");
             $updateContainer.css({"opacity" : "1"});
             setTimeout(function(){ $updateContainer.css("opacity", "0"); },2000);

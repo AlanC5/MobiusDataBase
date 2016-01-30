@@ -182,7 +182,7 @@ function deleteArchive() {
       if (data === "Deleted") {
         var archiveName = $("#current-title").text();
         // redirect change window
-        window.location = "http://localhost/website/recent/index.php?action=delete&archive=" + archiveName;
+        window.location = AJAX_URL + "recent?action=delete&archive=" + archiveName;
         // $updateContainer = $("#update-container");
         // $("#update-message").text("Deleted Archive");
         // $updateContainer.css({"opacity" : "1"});

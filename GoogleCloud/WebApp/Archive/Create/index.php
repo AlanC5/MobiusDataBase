@@ -5,6 +5,11 @@
 	//for this file start trying to understand from after the "start here" comment
 	session_start();
 
+	if (!isset($_SESSION['userId']) || empty($_SESSION['userId'])) {
+  	header("Location: http://mobius-website-1.appspot.com/");
+  	exit();
+  }
+
 	//register mustache library
 	require '../../Mustache/Autoloader.php';
 	Mustache_Autoloader::register();
