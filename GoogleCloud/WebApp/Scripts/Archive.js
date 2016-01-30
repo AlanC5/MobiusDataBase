@@ -387,6 +387,12 @@ function previewArticle () {
         privacyState = "Private";
 			}
 
+      if (shareLink.indexOf("http://") === 0 || shareLink.indexOf("https://") === 0) {
+      }
+      else {
+        shareLink = "http://" + shareLink;
+      }
+
 			$li.append('<div class="content-more-info">' +
 							'<div class="left-info">' +
 								'<div class="action-icon">' +
@@ -408,7 +414,7 @@ function previewArticle () {
 								'</div>' +
 							'</div>' +
 							'<div class="right-info">' +
-								'<p class="content-title">' +  title + '</p>' +
+								'<a href="' + shareLink + '" target="_blank"><p class="content-title">' +  title + '</p></a>' +
 								'<p class="content-description">' + description + '</p>' +
 							'</div>' +
 						'</div>');

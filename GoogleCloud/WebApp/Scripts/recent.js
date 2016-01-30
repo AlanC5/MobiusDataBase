@@ -58,6 +58,13 @@ function previewArticle () {
 				privacyIcon = "lock";
         privacyState = "Private";
 			}
+
+      if (shareLink.indexOf("http://") === 0 || shareLink.indexOf("https://") === 0) {
+      }
+      else {
+        shareLink = "http://" + shareLink;
+      }
+
       console.log(authorImg);
 			// How to check te data and create data element
 			// AuthorImg will create error because image is not found on server currently (DB implementation will fix it)
@@ -81,7 +88,7 @@ function previewArticle () {
 								'</div>' +
 							'</div>' +
 							'<div class="right-info">' +
-								'<p class="content-title">' +  title + '</p>' +
+								'<a href="' + shareLink + '" target="_blank"><p class="content-title">' +  title + '</p></a>' +
                 '<p class="content-archive"><i class="fa fa-' + locationArchiveIcon + '"></i>' + locationArchive + '</p>' +
 								'<p class="content-description">' + description + '</p>' +
 							'</div>' +
