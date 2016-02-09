@@ -67,7 +67,13 @@ if (isset($_POST['loadAnnotation']) && !empty($_POST['loadAnnotation'])) {
                   }
                 }
 
-                $listofParentComment[] = array("pAnnotationId" => $annotationRow["pAnnotationId"], "comment" => $annotationRow["comment"], "likes" => $annotationRow["likes"], "annotationType" => $annotationRow["annotationType"], "saveDate" => $annotationRow["saveDate"], "color" => $annotationRow["color"], "annotatedText" => $annotatedText, "textPosition" => $textPosition, "children" => $childList);
+                $userStatement = $DB->prepare("SELECT * FROM user WHERE userId = :userId");
+                $userStatement->execute(array(':userId' => $annotationRow["userId"]));
+                $userStatementRow = $userStatement->fetch();
+                $name =  $userStatementRow["name"];
+
+
+                $listofParentComment[] = array("pAnnotationId" => $annotationRow["pAnnotationId"], "comment" => $annotationRow["comment"], "likes" => $annotationRow["likes"], "annotationType" => $annotationRow["annotationType"], "saveDate" => $annotationRow["saveDate"], "color" => $annotationRow["color"], "annotatedText" => $annotatedText, "textPosition" => $textPosition, "children" => $childList, "name" => $name);
               }
 
               break;
