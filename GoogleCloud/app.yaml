@@ -38,4 +38,4 @@ handlers:
   script: /Extension/loadAnnotation/loadAnnotation.php
 
 - url: /Extension/requestUser
-  script: /Extension/folderTest.php
+  script: /Extension/requestUser.php
