@@ -173,7 +173,7 @@ function changeDescription() {
 
 function deleteArchive() {
   $.ajax({
-    url: AJAX_URL + "WebApp/archive/update",
+    url: AJAX_URL + "WebApp/archive/update.php",
     type: "post",
     data: {'update' : 'delete'},
     dataType: "text",
@@ -181,7 +181,7 @@ function deleteArchive() {
       if (data === "Deleted") {
         var archiveName = $("#current-title").text();
         // redirect change window
-        window.location = AJAX_URL + "recent?action=delete&archive=" + archiveName;
+        window.location = AJAX_URL + "WebApp/recent/index.php?action=delete&archive=" + archiveName;
         // $updateContainer = $("#update-container");
         // $("#update-message").text("Deleted Archive");
         // $updateContainer.css({"opacity" : "1"});
@@ -209,7 +209,7 @@ function deleteArchive() {
 
 function updatePrivacy(newPrivacy) {
   $.ajax({
-    url: AJAX_URL + "WebApp/archive/update",
+    url: AJAX_URL + "WebApp/archive/update.php",
     type: "post",
     data: {'update' : 'privacy', 'newPrivacy' : newPrivacy },
     dataType: "text",
@@ -249,7 +249,7 @@ function updatePrivacy(newPrivacy) {
 
 function updateSymbol(newSymbol) {
   $.ajax({
-    url: AJAX_URL + "WebApp/archive/update",
+    url: AJAX_URL + "WebApp/archive/update.php",
     type: "post",
     data: {'update' : 'symbol', 'newSymbol' : newSymbol },
     dataType: "text",
@@ -283,7 +283,7 @@ function updateSymbol(newSymbol) {
 
 function updateTitle(newTitle) {
   $.ajax({
-    url: AJAX_URL + "WebApp/archive/update",
+    url: AJAX_URL + "WebApp/archive/update.php",
     type: "post",
     data: {'update' : 'title', 'newTitle' : newTitle },
     dataType: "text",
@@ -317,7 +317,7 @@ function updateTitle(newTitle) {
 
 function updateDescription(newDescription) {
   $.ajax({
-    url: AJAX_URL + "WebApp/archive/update",
+    url: AJAX_URL + "WebApp/archive/update.php",
     type: "post",
     data: {'update' : 'description', 'newDescription' : newDescription },
     dataType: "text",
@@ -437,7 +437,7 @@ function deleteArticle() {
     var articleId = $a.data("articleid");
 
     $.ajax({
-      url: AJAX_URL + "WebApp/archive/update",
+      url: AJAX_URL + "WebApp/archive/update.php",
       type: "post",
       data: {'update' : 'deleteArticle', 'article' : articleId },
       dataType: "text",

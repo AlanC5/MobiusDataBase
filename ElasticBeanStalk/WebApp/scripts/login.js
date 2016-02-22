@@ -38,7 +38,7 @@ function submitLoginInfo() {
         success: function(data) {
           alert(data);
           if (data == "Already Logged In" || data == "Logged In. Welcome to Mobius.") {
-            window.location.href = AJAX_URL + "recent";
+            window.location.href = AJAX_URL + "WebApp/recent/index.php";
           }
         },
         error: function(xhr, desc, err) {

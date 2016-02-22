@@ -170,7 +170,7 @@ function submitData() {
       icon = icon.replace('fa fa-', '');
 
       $.ajax({
-        url: AJAX_URL + "WebApp/createArchive",
+        url: AJAX_URL + "WebApp/archive/create/create.php",
         type: "post",
         data: {'create' : 'newArchive',
                 'title' : title, 'icon' : icon,
@@ -183,7 +183,7 @@ function submitData() {
           if (!isNaN(data)) {
             console.log(data);
             $updateContainer = $("#update-container");
-            window.location.href = AJAX_URL + "archive?archive=" + data;
+            window.location.href = AJAX_URL + "WebApp/archive/index.php?archive=" + data;
             $("#update-message").text("Created Archive");
             $updateContainer.css({"opacity" : "1"});
             setTimeout(function(){ $updateContainer.css("opacity", "0"); },2000);

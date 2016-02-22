@@ -155,7 +155,7 @@ function changeName() {
       $updateContainer = $("#update-container");
 
       $.ajax({
-        url: AJAX_URL + "WebApp/userSetting/update",
+        url: AJAX_URL + "WebApp/userSetting/update.php",
         type: "post",
         data: {'updateUser' : 'name', 'newName' : newName},
         dataType: "text",
@@ -237,7 +237,7 @@ function changeEmail() {
   function updateEmail(newEmail) {
     $updateContainer = $("#update-container");
     $.ajax({
-      url: AJAX_URL + "WebApp/userSetting/update",
+      url: AJAX_URL + "WebApp/userSetting/update.php",
       type: "post",
       data: {'updateUser' : 'email', 'newEmail' : newEmail},
       dataType: "text",
@@ -295,7 +295,7 @@ function changePassword() {
     $(".password-container").css({"border-color" : ""});
 
     $.ajax({
-      url: AJAX_URL + "WebApp/userSetting/update",
+      url: AJAX_URL + "WebApp/userSetting/update.php",
       type: "post",
       data: {'updateUser' : 'password', 'oldPassword' : oldPassword, 'newPassword' : newPassword},
       dataType: "text",
