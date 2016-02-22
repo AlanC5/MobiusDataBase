@@ -1,5 +1,4 @@
-// var AJAX_URL =  "http://mobi-1171.appspot.com/";
-var AJAX_URL = "http://mobius-website-1.appspot.com/";
+var AJAX_URL = "https://mobiusdev-dev.us-east-1.elasticbeanstalk.com/";
 
 showHidePassword();
 submitLoginInfo();
@@ -32,7 +31,7 @@ function submitLoginInfo() {
       $emailInput.removeClass("incorrect-info");
 
       $.ajax({
-        url: AJAX_URL + "WebApp/login",
+        url: AJAX_URL + "WebApp/login/login.php",
         type: "post",
         data: {'action' : 'login', 'email' : email, 'password' : password} ,
         dataType: "text",

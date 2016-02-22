@@ -4,7 +4,7 @@ require('../../config.php');
 
 session_start();
 if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) {
-	header("Location: http://mobius-website-1.appspot.com/recent");
+	header("Location: http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/recent/index.php");
 	exit();
 }
 

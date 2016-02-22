@@ -1,7 +1,6 @@
 // Prior to sending data via AJAX, confirm title and icon are set
 
-// var AJAX_URL =  "http://mobi-1171.appspot.com/";
-var AJAX_URL = "http://mobius-website-1.appspot.com/";
+var AJAX_URL = "http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/";
 
 $(document).ready(function() {
   $("#title-input").autoGrowInput({minWidth: 100,comfortZone:0});

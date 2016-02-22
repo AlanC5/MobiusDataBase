@@ -1,48 +1,8 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-RewriteRule    ^styles?$   /WebApp/styles   [NC,L]
+RewriteRule    ^styles/(.*)   /WebApp/styles/$1
 
-RewriteRule    ^scripts?$   /WebApp/scripts   [NC,L]
+RewriteRule    ^scripts/(.*)   /WebApp/scripts/$1
 
-RewriteRule    ^userImages?$   /WebApp/userImages   [NC,L]
-
-RewriteRule    ^index.php?$    /WebApp/login/index.php [NC,L]
-
-RewriteRule    ^WebApp/login?$    /WebApp/login/login.php [NC,L]
-
-RewriteRule    ^recent?$    /WebApp/recent/index.php  [NC,L]
-
-RewriteRule    ^archive/create?$    /WebApp/archive/create/index.php  [NC,L]
-
-RewriteRule    ^WebApp/createArchive?$    /WebApp/archive/create/create.php [NC,L]
-
-RewriteRule    ^archive?$    /WebApp/archive/index.php  [NC,L]
-
-RewriteRule    ^WebApp/archive/update?$    /WebApp/archive/update.php [NC,L]
-
-RewriteRule    ^userSetting?$    /WebApp/userSetting/index.php  [NC,L]
-
-RewriteRule    ^WebApp/userSetting/imageUpload.php?$    /WebApp/userSetting/imageUpload.php [NC,L]
-
-RewriteRule    ^WebApp/userSetting/update?$    /WebApp/userSetting/update.php [NC,L]
-
-RewriteRule    ^Extension/login?$    /Extension/login/login.php [NC,L]
-
-RewriteRule    ^Extension/createArchive?$    /Extension/archive/createArchive.php [NC,L]
-
-RewriteRule    ^Extension/requestArchive?$    /Extension/archive/requestArchive.php [NC,L]
-
-RewriteRule    ^Extension/addArticle?$    /Extension/article/addArticle.php [NC,L]
-
-RewriteRule    ^Extension/updateArticle?$    /Extension/article/updateArticle.php [NC,L]
-
-RewriteRule    ^Extension/deleteArticle?$    /Extension/article/deleteArticle.php [NC,L]
-
-RewriteRule    ^Extension/addParentComment?$?$    /Extension/parentComment/addParentComment.php [NC,L]
-
-RewriteRule    ^Extension/addChildComment?$    /Extension/childComment/addChildComment.php  [NC,L]
-
-RewriteRule    ^Extension/loadAnnotation?$    /Extension/loadAnnotation/loadAnnotation.php  [NC,L]
-
-RewriteRule    ^Extension/requestUser?$    /Extension/folderTest.php  [NC,L]
+RewriteRule    ^userImages/(.*)   /WebApp/userImages/$1

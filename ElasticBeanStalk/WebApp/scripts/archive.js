@@ -1,5 +1,4 @@
-// var AJAX_URL =  "http://mobi-1171.appspot.com/";
-var AJAX_URL = "http://mobius-website-1.appspot.com/";
+var AJAX_URL = "http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/";
 
 
 // May need to be changed depending on server changes and URL
