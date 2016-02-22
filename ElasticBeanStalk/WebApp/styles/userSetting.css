@@ -1,0 +1,186 @@
+#user-setting-left {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+#user-setting-center {
+  height: 100%;
+  width: 60%;
+  float: left;
+  text-align: center;
+  position: relative;
+  padding-top: 5px;
+}
+
+#user-setting-center #user-image-container #img_file {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#user-setting-center #user-image-container {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  margin-right: 15px;
+}
+
+#user-setting-center #user-image-container div {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+#user-setting-center #user-image-container:hover div {
+  border: 2px solid #42C0F2;
+}
+
+#user-setting-center #current-name {
+  border: 2px solid transparent;
+}
+
+#user-setting-center #current-name:hover {
+  border: 2px solid #42C0F2;
+}
+
+#user-setting-center #user-name-nav-container {
+  display: inline-block;
+}
+
+#user-setting-center #user-name-nav-container #current-name {
+  font-size: 24px;
+  color: #20AAEA;
+  display: inline-block;
+  vertical-align: bottom;
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 550px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 6px 8px;
+}
+
+#user-setting-center #user-name-nav-container #current-name:hover {
+  color: #42C0F2;
+}
+
+#user-setting-center #user-name-nav-container #name-input {
+  display: none;
+  vertical-align: bottom;
+  outline: none;
+  border: 2px solid #42C0F2;
+  font-size: 24px;
+  color: #20AAEA;
+  padding: 6px 8px;
+  max-width: 550px;
+  width: inherit;
+}
+
+.content-nav-span {
+  color: #A1A4AA;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.content-nav-span:hover {
+  color: #42C0F2;
+  border-bottom: 2px solid #42C0F2;
+}
+
+.selected-content-nav {
+  color: #42C0F2;
+  border-bottom: 2px solid #42C0F2;
+}
+
+.sub-content-body {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+#new-email {
+  padding: 10px 15px;
+  font-size: 20px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
+  background-color: #F5F5F5;
+}
+
+#new-email:focus,
+#new-email:hover {
+  border: 2px solid #42C0F2;
+}
+
+#email-body span {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.password-container {
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid transparent;
+  position: relative;
+  width: 280px;
+  border: 2px solid transparent;
+}
+
+.password-container:hover  {
+  border: 2px solid #42C0F2;
+}
+
+.password-input {
+  outline: none;
+  background-color: #F5F5F5;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  display: inline-block;
+  float: left;
+}
+
+.hideShowPassword-toggle-hide {
+  font-size: 12px;
+  top: 12px;
+  right: 4px;
+  color: #A9A9A9;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.hideShowPassword-toggle-hide:hover {
+  color: #555555;
+  background-color: #e0e0e0;
+}
+
+.incorrect-info {
+  border-color: #ff0000;
+}
+
+#submit-button {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  background-color: #20AAEA;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 9px;
+  font-size: 20px;
+  position: absolute;
+  right: 135px;
+}
+
+.active-info {
+	display: block;
+}
+
+.inactive-info {
+  display: none;
+}

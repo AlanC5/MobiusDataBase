@@ -1,0 +1,74 @@
+application: mobi-1171
+version: 1
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /styles
+  static_dir: WebApp/styles
+
+- url: /scripts
+  static_dir: WebApp/scripts
+
+- url: /userImages
+  static_dir: WebApp/userImages
+
+- url: /
+  script: /WebApp/login/index.php
+
+- url: /WebApp/login
+  script: /WebApp/login/login.php
+
+- url: /recent
+  script: /WebApp/recent/index.php
+
+- url: /archive/create
+  script: /WebApp/archive/create/index.php
+
+- url: /WebApp/createArchive
+  script: /WebApp/archive/create/create.php
+
+- url: /archive
+  script: /WebApp/archive/index.php
+
+- url: /WebApp/archive/update
+  script: /WebApp/archive/update.php
+
+- url: /userSetting
+  script: /WebApp/userSetting/index.php
+
+- url: /WebApp/userSetting/imageUpload.php
+  script: /WebApp/userSetting/imageUpload.php
+
+- url: /WebApp/userSetting/update
+  script: /WebApp/userSetting/update.php
+
+- url: /Extension/login
+  script: /Extension/login/login.php
+
+- url: /Extension/createArchive
+  script: /Extension/archive/createArchive.php
+
+- url: /Extension/requestArchive
+  script: /Extension/archive/requestArchive.php
+
+- url: /Extension/addArticle
+  script: /Extension/article/addArticle.php
+
+- url: /Extension/updateArticle
+  script: /Extension/article/updateArticle.php
+
+- url: /Extension/deleteArticle
+  script: /Extension/article/deleteArticle.php
+
+- url: /Extension/addParentComment
+  script: /Extension/parentComment/addParentComment.php
+
+- url: /Extension/addChildComment
+  script: /Extension/childComment/addChildComment.php
+
+- url: /Extension/loadAnnotation
+  script: /Extension/loadAnnotation/loadAnnotation.php
+
+- url: /Extension/requestUser
+  script: /Extension/folderTest.php

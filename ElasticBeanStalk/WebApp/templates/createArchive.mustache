@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/styles/nav.css">
+		<link rel="stylesheet" type="text/css" href="/styles/createArchive.css">
+  </head>
+
+  <body>
+    {{> partials/menu }}
+
+    <div id="main-content-container">
+      <div id="navigation">
+        {{> partials/top-nav }}
+          <div id="nav-heading">
+            <div id="archive-privacy">
+              <div id="privacy-container">
+                <div id="privacy-click">
+                    <i class="fa fa-globe"></i>
+                    <span>Public</span>
+                </div>
+                <div id="privacy-dropdown" class="invisible">
+                  <div id="global" class="privacy-dropdown-option">
+                    <i class="fa fa-globe"></i>
+                    <span>Public</span>
+                  </div>
+                  <div id="private" class="privacy-dropdown-option">
+                    <i class="fa fa-lock"></i>
+                    <span style="margin-left: 8px;">Private</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="archive-center">
+              <div id="symbol-container">
+                <div id="symbol-click" class="visible-border-color"><i class=""></i></div>
+      					<div id="symbol-dropdown" class="invisible">
+      						<div class="symbol-dropdown-option"><i class="fa fa-leaf"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-university"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-plane"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-money"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-music"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-glass"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-flask"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-book"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-cutlery"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-wrench"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-gamepad"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-line-chart"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-futbol-o"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-flash"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-lightbulb-o"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-paint-brush"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-camera-retro"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-film"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-heart"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-language"></i></div>
+      						<div class="symbol-dropdown-option"><i class="fa fa-magic"></i></div>
+      					</div>
+              </div>
+              <div id="archive-title">
+                <input type="text" id="title-input" placeholder="TITLE" value="">
+      					<span id="current-title">TITLE</span>
+              </div>
+
+            </div>
+            <div id="update-notification">
+              <div id="update-container">
+                <span id="update-message"></span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="content-body">
+        <div id="archive-body">
+          <div id="archive-description">
+            <textarea id="description-input" tabindex="-1" placeholder="DESCRIPTION (OPTIONAL)"></textarea>
+          </div>
+
+          <div id="submit-button">
+            <span>Create Archive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/scripts/autosize.min.js"></script>
+    <script src="/scripts/autosizeWidth.js"></script>
+    <script src="/scripts/nav.js"></script>
+    <script src="/scripts/createArchive.js"></script>
+  </body>
+</html>

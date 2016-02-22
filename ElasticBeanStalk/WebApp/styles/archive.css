@@ -1,0 +1,499 @@
+#archive-privacy {
+  width: 20%;
+  height: 100%;
+  float: left;
+  font-size: 14px;
+  padding-left: 30px;
+  padding-top: 8px;
+}
+
+#archive-center {
+  height: 100%;
+  width: 60%;
+  float: left;
+  text-align: center;
+  position: relative;
+  padding-top: 8px;
+}
+
+#archive-privacy #privacy-container {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+#archive-privacy #privacy-container #privacy-click {
+  padding: 6px 10px;
+  border: 2px solid transparent;
+}
+
+#archive-privacy #privacy-container #privacy-click:hover {
+  border: 2px solid #42C0F2;
+}
+
+#archive-privacy span,
+#archive-center #archive-option-click #archive-option-dropdown span {
+  font-size: 16px;
+  color: #A1A4AA;
+  vertical-align: super;
+  margin-left: 5px;
+}
+
+#archive-privacy .fa-globe {
+  color: #42C0F2;;
+}
+
+#archive-privacy .fa-lock {
+  margin-left: 4px;
+  color: #A1A4AA;
+}
+
+#archive-privacy #privacy-container #privacy-dropdown {
+  width: 120px;
+  border: 1px solid #EFF0F1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  background-color: #F5F5F5;
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+}
+
+#archive-privacy #privacy-dropdown #global,
+#archive-privacy #privacy-dropdown #private,
+#archive-center #archive-option-click #archive-option-dropdown #delete-archive {
+  padding: 10px 15px;
+}
+#archive-privacy #privacy-dropdown #global:hover,
+#archive-privacy #privacy-dropdown #private:hover,
+#archive-center #symbol-container #symbol-dropdown .symbol-dropdown-option:hover,
+#archive-center #archive-option-click #archive-option-dropdown #delete-archive:hover {
+  background-color: #eff0f1;
+}
+
+#archive-privacy .fa {
+  font-size: 35px;
+}
+
+#archive-center #symbol-container,
+#archive-center #archive-title {
+  display: inline-block;
+}
+
+#archive-center #symbol-container #symbol-dropdown {
+  position: absolute;
+  width: 303px;
+	height: 136px;
+	border: 1px solid #EFF0F1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  background-color: #F5F5F5;
+  z-index: 1;
+}
+
+#archive-center #symbol-container #symbol-dropdown .fa {
+  font-size: 23px;
+	padding-top: 10px;
+}
+
+#archive-center #symbol-container #symbol-dropdown .symbol-dropdown-option {
+  cursor: pointer;
+	text-align: center;
+  float: left;
+  font-size: 23px;
+  width: 43px;
+  height: 45px;
+}
+
+#archive-center #symbol-click {
+  font-size: 24px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 6px;
+  border: 2px solid transparent;
+  width: 45px;
+}
+
+#archive-center #symbol-click:hover {
+  border: 2px solid #42C0F2;
+}
+
+#archive-center #current-title {
+  border: 2px solid transparent;
+}
+
+#archive-center #current-title:hover {
+  border: 2px solid #42C0F2;
+}
+
+#archive-center #archive-title #current-title {
+  font-size: 24px;
+  color: #20AAEA;
+  display: inline-block;
+  vertical-align: bottom;
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 550px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 6px 8px;
+}
+
+#archive-center #archive-title #current-title:hover {
+  color: #42C0F2;
+}
+
+#archive-center #archive-title #title-input {
+  display: none;
+  vertical-align: bottom;
+  outline: none;
+  border: 2px solid #42C0F2;
+  font-size: 24px;
+  color: #20AAEA;
+  padding: 6px 8px;
+  max-width: 550px;
+  width: inherit;
+}
+
+#archive-center #archive-option-container {
+  display: inline-block;
+}
+
+#archive-center #archive-option-click {
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -28px;
+}
+
+#archive-center #archive-option-click .fa-angle-down {
+  color: #A1A4AA;
+  font-size: 20px;
+  -webkit-transition: color 300ms linear;
+  -moz-transition: color 300ms linear;
+  -o-transition: color 300ms linear;
+  -ms-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+#archive-center #archive-option-click:hover .fa-angle-down{
+  color: #42C0F2;
+}
+
+#archive-center #archive-option-click #archive-option-dropdown {
+  width: 168px;
+  position: absolute;
+  border: 1px solid #EFF0F1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  background-color: #F5F5F5;
+  top: 50px;
+  z-index: 1;
+}
+
+#archive-center #archive-option-click #archive-option-dropdown .fa-trash-o{
+  font-size: 28px;
+}
+
+#archive-body {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+#archive-description {
+  padding-left: 100px;
+  display: inline-block;
+}
+
+#archive-description #description-input {
+  padding: 10px 15px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  background-color: #F5F5F5;
+  height: auto;
+  width: 700px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+#archive-description #description-input:focus,
+#archive-description #description-input:hover {
+  border: 2px solid #42C0F2;
+}
+
+.og-grid {
+	list-style: none;
+	margin: 0 auto;
+	box-sizing: border-box;
+	text-align: center;
+	width: 100%;
+	padding: 0;
+}
+
+.og-grid li {
+	display: inline-block;
+	margin: 10px 2px 0 5px;
+	vertical-align: top;
+	width: 280px;
+	height: 190px;
+}
+
+.og-grid li .content-container > a,
+.og-grid li .content-container > a div {
+	border: none;
+	outline: none;
+	display: block;
+	position: relative;
+	pointer-events: none;
+	width: 100%;
+	height: 190px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.og-grid li.og-expanded > .content-container:after {
+	top: auto;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #ddd;
+	border-width: 15px;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+}
+
+.content-panel {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.content-container {
+	position: relative;
+}
+
+.og-grid li  .content-container > a div {
+  background-color: #E5E5E5;
+	-webkit-filter: brightness(70%) contrast(90%);
+  filter: brightness(70%) contrast(90%);
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+.og-grid li .content-container:hover > a div {
+	opacity: 1;
+	-webkit-filter: brightness(100%) contrast(100%);
+	-webkit-transition: -webkit-filter 0.5s ease-in-out;
+}
+
+
+.og-grid li .content-container:hover > .content-text {
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.content-text {
+	overflow: hidden;
+	color: #fff9f9;
+	box-sizing: border-box;
+	height: 115px;
+	width: 100%;
+	font-size: 24px;
+	padding: 20px 20px;
+	position: absolute;
+  text-align: left;
+  top: 0;
+  left: 0;
+  margin: 0;
+  cursor: default;
+  line-height: 1.25;
+  -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.content-title {
+	overflow: hidden;
+	max-height: 100px;
+	font-size: 1.3em;
+}
+
+.content-more-info {
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	width: 100%;
+  min-width: 1000px;
+	height: 0;
+	margin-top: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+	text-align: left;
+	background-color: #ddd;
+	overflow: hidden;
+}
+
+.person {
+	cursor: pointer;
+	border-radius: 30px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+	display: inline-block;
+	height: 60px;
+	margin-right: 5px;
+	width: 60px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.content-more-info .left-info {
+	padding-top: 40px;
+	width: 28%;
+	height: 100%;
+	margin-right: 3%;
+	display: inline-block;
+	text-align: center;
+}
+
+.content-more-info .right-info {
+	padding-top: 22px;
+	width: 69%;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.action-icon {
+	position: relative;
+}
+
+.action-icon .fa{
+	position: absolute;
+	cursor: pointer;
+	font-size: 28px;
+	color: #686868;
+	top: -20px;
+  -webkit-transition: color 300ms linear;
+  -moz-transition: color 300ms linear;
+  -o-transition: color 300ms linear;
+  -ms-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+.action-icon .fa-trash {
+	left: 12px;
+}
+
+.action-icon .fa-pencil {
+	right: 15px;
+}
+
+.action-icon .fa-trash:hover {
+	color: #ff4f4f;
+}
+
+.action-icon .fa-pencil:hover {
+  color: #42C0F2;
+}
+
+.user-info .person {
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+.user-info .name {
+	max-width: 100%;
+  max-height: 18px;
+  overflow: hidden;
+	cursor: pointer;
+	margin-bottom: 7px;
+	margin-top: 10px;
+  display: inline-block;
+}
+
+.user-info .name:hover {
+	text-decoration: underline;
+}
+
+.privacy {
+	margin: 0;
+	margin-top: 10px;
+}
+
+.privacy .fa {
+	margin-right: 7px;
+  font-size: 22px;
+}
+
+.privacy .fa-globe {
+	color: #42C0F2;
+}
+
+.privacy .fa-lock {
+  color: #A1A4AA;
+}
+
+.social-media {
+	margin-top: 9px;
+}
+
+.social-media .fa {
+	font-size: 30px;
+	margin-right: 8px;
+	cursor: pointer;
+}
+
+.fa-facebook-official {
+	color: #44619d;
+}
+
+.fa-twitter-square {
+	color: #2aa9e0;
+}
+
+.fa-linkedin-square {
+	color: #0177b5;
+}
+
+.share-link {
+	margin-top: 9px;
+}
+
+.share-link input {
+	padding: 5px;
+	width: 80%;
+	font-size: 15px;
+}
+
+.right-info p {
+	margin: 0;
+}
+
+.right-info .content-title {
+	max-height: 54px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #20AAEA;
+    display: inline;
+}
+
+.right-info .content-title:hover {
+  color: #42C0F2;
+	text-decoration: underline;
+}
+
+.right-info .content-description {
+	margin-top: 8px;
+	line-height: 1.5;
+	max-height: 75%;
+	overflow: auto;
+}
+
+.active-info {
+	display: block;
+}
