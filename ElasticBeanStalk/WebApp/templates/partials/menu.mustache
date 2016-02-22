@@ -14,12 +14,12 @@
     <div id="archive-panel">
       {{#archives}}
         {{#private}}
-          <a href="http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/index.php?archive={{archiveid}}" id="archive{{archiveid}}">
+          <a href="http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/archive/index.php?archive={{archiveid}}" id="archive{{archiveid}}">
           <div class="archive"><i class="fa fa-{{icon}}"></i><p>{{archivename}}</p><i class="fa fa-lock"></i></div>
           </a>
         {{/private}}
         {{^private}}
-          <a href="http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/index.php?archive={{archiveid}}" id="archive{{archiveid}}">
+          <a href="http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/archive/index.php?archive={{archiveid}}" id="archive{{archiveid}}">
           <div class="archive"><i class="fa fa-{{icon}}"></i><p>{{archivename}}</p></div>
           </a>
         {{/private}}
