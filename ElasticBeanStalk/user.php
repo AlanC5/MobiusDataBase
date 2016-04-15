@@ -11,10 +11,12 @@ class user
 
     public function insertUser($name, $email, $password)
     {
-        if ($this->connection->DB != null)
+        $DB = $this->connection->DB;
+
+        if ($DB != null)
         {
-            $statement = $this->connection->DB->prepare("INSERT INTO user (userId, email, name, password, imagefile) VALUES (:userId, :email, :name, :password, :imagefile)");
-            $result = $statement->execute(array(':userId' => NULL, ':email' => $email, ':name' => $name, ":password" => $password, ":imagefile" => 'No'));
+            $statement = $DB->prepare("INSERT INTO user (userId, email, name, password, imagefile) VALUES (:userId, :email, :name, :password, :imagefile)");
+            $statement->execute(array(':userId' => NULL, ':email' => $email, ':name' => $name, ":password" => $password, ":imagefile" => 'No'));
 
         }
 
