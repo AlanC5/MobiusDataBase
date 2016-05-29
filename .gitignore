@@ -67,3 +67,4 @@ tests/report/
 venv/
 .idea/
 db.sqlite3
+Grunt/
