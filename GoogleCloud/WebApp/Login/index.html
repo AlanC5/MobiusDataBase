@@ -1,6 +1,7 @@
 <!DOCTYPE>
 <html>
 	<head>
+		<meta name="google-signin-client_id" content="102629415692-92fn510gpjosketphv6i2gbs1ds6o64l.apps.googleusercontent.com">
 		<title>Log In</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="../Styles/Landing.css">
@@ -9,7 +10,7 @@
 	<body>
 		<div id="center_box">
 			<p id="logo_name">MOBIUS</p>
-			
+
 			<div id="main_wrap">
 				<div id="login">
 					<input class="input_box" id="email_input" type="text" name="Email" placeholder="Email"><br>
@@ -19,8 +20,20 @@
 					<div class="change_panel" id="new_user_box"><p id="new_user" class="register_button change_panel_p"><a href="register.html">Sign Up for Free</a></p></div>
 				</div>
 			</div>
+
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="../Scripts/Login.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script>
+			function onSignIn(googleUser) {
+		  	var profile = googleUser.getBasicProfile();
+				console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+				console.log('Name: ' + profile.getName());
+				console.log('Image URL: ' + profile.getImageUrl());
+				console.log('Email: ' + profile.getEmail());
+			}
+		</script>
 	</body>
 </html>
