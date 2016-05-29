@@ -9,7 +9,7 @@ $user = new user($connection);
 echo "PreChecking";
 
 
-$user->insertUser("Lucifer", "Dark@net.com", "SinsBro");
+$user->insertUser("Midoriya", "Deku@net.com", "blame");
 
 echo "Checking";
 

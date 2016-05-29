@@ -3,20 +3,21 @@
 class user
 {
     protected $connection;
+    protected $DB;
 
     public function  __construct(connection $connection)
     {
         $this->connection = $connection;
+        $this->DB = $this->connection->DB;
     }
 
     public function insertUser($name, $email, $password)
     {
-        $DB = $this->connection->DB;
 
-        if ($DB != null)
+        if ($this->DB != null)
         {
-            $statement = $DB->prepare("INSERT INTO user (userId, email, name, password, imagefile) VALUES (:userId, :email, :name, :password, :imagefile)");
-            $statement->execute(array(':userId' => NULL, ':email' => $email, ':name' => $name, ":password" => $password, ":imagefile" => 'No'));
+            $statement = $this->DB->prepare("INSERT INTO user (userId, email, name, password, imagefile) VALUES (:userId, :email, :name, :password, :imagefile)");
+            $statement->execute(array(':userId' => NULL, ':email' => $email, ':name' => $name, ":password" => md5($password), ":imagefile" => 'No'));
 
         }
 
@@ -24,6 +25,11 @@ class user
         {
             echo "Not connected";
         }
+    }
+
+
+    public function logInUser($email, $password) {
+
     }
 }
 
