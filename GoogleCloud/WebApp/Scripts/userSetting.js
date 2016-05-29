@@ -1,3 +1,7 @@
+// var AJAX_URL =  "http://mobi-1171.appspot.com/";
+var AJAX_URL = "http://mobius-website-1.appspot.com/";
+
+
 $(document).ready(function() {
   $("#name-input").autoGrowInput({minWidth: 100,comfortZone:0});
   contentNav();
@@ -57,7 +61,7 @@ function changeProfilePic() {
     var imageData = new FormData();
     imageData.append('file', $("#img_file")[0].files[0]);
     $.ajax({
-      url: 'http://localhost/website/UserSetting/imageUpload.php?files',
+      url: AJAX_URL + "WebApp/userSetting/imageUpload.php?files",
       type: 'post',
       data: imageData,
       dataType: 'text',
@@ -152,7 +156,7 @@ function changeName() {
       $updateContainer = $("#update-container");
 
       $.ajax({
-        url: "http://localhost/website/UserSetting/update.php",
+        url: AJAX_URL + "WebApp/userSetting/update",
         type: "post",
         data: {'updateUser' : 'name', 'newName' : newName},
         dataType: "text",
@@ -234,7 +238,7 @@ function changeEmail() {
   function updateEmail(newEmail) {
     $updateContainer = $("#update-container");
     $.ajax({
-      url: "http://localhost/website/UserSetting/update.php",
+      url: AJAX_URL + "WebApp/userSetting/update",
       type: "post",
       data: {'updateUser' : 'email', 'newEmail' : newEmail},
       dataType: "text",
@@ -292,7 +296,7 @@ function changePassword() {
     $(".password-container").css({"border-color" : ""});
 
     $.ajax({
-      url: "http://localhost/website/UserSetting/update.php",
+      url: AJAX_URL + "WebApp/userSetting/update",
       type: "post",
       data: {'updateUser' : 'password', 'oldPassword' : oldPassword, 'newPassword' : newPassword},
       dataType: "text",

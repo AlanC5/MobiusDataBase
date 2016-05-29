@@ -1,3 +1,7 @@
+// var AJAX_URL =  "http://mobi-1171.appspot.com/";
+var AJAX_URL = "http://mobius-website-1.appspot.com/";
+
+
 // May need to be changed depending on server changes and URL
 var url = location.href;
 var urlParam = url.substring(url.indexOf("?")+1).replace('=', '');
@@ -170,14 +174,15 @@ function changeDescription() {
 
 function deleteArchive() {
   $.ajax({
-    url: "http://localhost/website/archive/update.php",
+    url: AJAX_URL + "WebApp/archive/update",
     type: "post",
     data: {'update' : 'delete'},
     dataType: "text",
     success: function(data) {
       if (data === "Deleted") {
         var archiveName = $("#current-title").text();
-        window.location = "http://localhost/website/recent/index.php?action=delete&archive=" + archiveName;
+        // redirect change window
+        window.location = AJAX_URL + "recent?action=delete&archive=" + archiveName;
         // $updateContainer = $("#update-container");
         // $("#update-message").text("Deleted Archive");
         // $updateContainer.css({"opacity" : "1"});
@@ -205,7 +210,7 @@ function deleteArchive() {
 
 function updatePrivacy(newPrivacy) {
   $.ajax({
-    url: "http://localhost/website/archive/update.php",
+    url: AJAX_URL + "WebApp/archive/update",
     type: "post",
     data: {'update' : 'privacy', 'newPrivacy' : newPrivacy },
     dataType: "text",
@@ -245,7 +250,7 @@ function updatePrivacy(newPrivacy) {
 
 function updateSymbol(newSymbol) {
   $.ajax({
-    url: "http://localhost/website/archive/update.php",
+    url: AJAX_URL + "WebApp/archive/update",
     type: "post",
     data: {'update' : 'symbol', 'newSymbol' : newSymbol },
     dataType: "text",
@@ -279,7 +284,7 @@ function updateSymbol(newSymbol) {
 
 function updateTitle(newTitle) {
   $.ajax({
-    url: "http://localhost/website/archive/update.php",
+    url: AJAX_URL + "WebApp/archive/update",
     type: "post",
     data: {'update' : 'title', 'newTitle' : newTitle },
     dataType: "text",
@@ -313,7 +318,7 @@ function updateTitle(newTitle) {
 
 function updateDescription(newDescription) {
   $.ajax({
-    url: "http://localhost/website/archive/update.php",
+    url: AJAX_URL + "WebApp/archive/update",
     type: "post",
     data: {'update' : 'description', 'newDescription' : newDescription },
     dataType: "text",
@@ -382,6 +387,12 @@ function previewArticle () {
         privacyState = "Private";
 			}
 
+      if (shareLink.indexOf("http://") === 0 || shareLink.indexOf("https://") === 0) {
+      }
+      else {
+        shareLink = "http://" + shareLink;
+      }
+
 			$li.append('<div class="content-more-info">' +
 							'<div class="left-info">' +
 								'<div class="action-icon">' +
@@ -403,7 +414,7 @@ function previewArticle () {
 								'</div>' +
 							'</div>' +
 							'<div class="right-info">' +
-								'<p class="content-title">' +  title + '</p>' +
+								'<a href="' + shareLink + '" target="_blank"><p class="content-title">' +  title + '</p></a>' +
 								'<p class="content-description">' + description + '</p>' +
 							'</div>' +
 						'</div>');
@@ -427,7 +438,7 @@ function deleteArticle() {
     var articleId = $a.data("articleid");
 
     $.ajax({
-      url: "http://localhost/website/archive/update.php",
+      url: AJAX_URL + "WebApp/archive/update",
       type: "post",
       data: {'update' : 'deleteArticle', 'article' : articleId },
       dataType: "text",

@@ -1,0 +1,29 @@
+<div id="menu-container">
+  <div id="menu-top">
+    <div id="logo">
+    </div>
+    <div id="exit-menu" class="color-transition">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+  <div id="archive-container">
+    <div id="archive-top">
+      <p>Archive</p>
+      <a href="http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/archive/create/index.php"><i class="fa fa-plus color-transition" ></i></a>
+    </div>
+    <div id="archive-panel">
+      {{#archives}}
+        {{#private}}
+          <a href="http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/archive/index.php?archive={{archiveid}}" id="archive{{archiveid}}">
+          <div class="archive"><i class="fa fa-{{icon}}"></i><p>{{archivename}}</p><i class="fa fa-lock"></i></div>
+          </a>
+        {{/private}}
+        {{^private}}
+          <a href="http://mobiusdev-dev.us-east-1.elasticbeanstalk.com/WebApp/archive/index.php?archive={{archiveid}}" id="archive{{archiveid}}">
+          <div class="archive"><i class="fa fa-{{icon}}"></i><p>{{archivename}}</p></div>
+          </a>
+        {{/private}}
+      {{/archives}}
+    </div>
+  </div>
+</div>

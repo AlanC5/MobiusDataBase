@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule    ^styles/(.*)   /WebApp/styles/$1
+
+RewriteRule    ^scripts/(.*)   /WebApp/scripts/$1
+
+RewriteRule    ^userImages/(.*)   /WebApp/userImages/$1
