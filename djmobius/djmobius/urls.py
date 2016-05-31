@@ -17,6 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^', include('mobius.urls')),
+    url(r'^', include('mobius.urls', namespace='mobius')),
     url(r'^admin/', admin.site.urls),
 ]

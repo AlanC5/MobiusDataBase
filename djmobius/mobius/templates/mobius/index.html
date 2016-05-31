@@ -1,48 +1,47 @@
-<!DOCTYPE html>
+{% extends "mobius/base.html" %}
 {% load staticfiles %}
-    <html>
-		<head>
-			<title>Log In</title>
-			<meta name="google-signin-client_id" content="102629415692-92fn510gpjosketphv6i2gbs1ds6o64l.apps.googleusercontent.com">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-			<link rel="stylesheet" type="text/css" href="{% static 'mobius/login.css' %}">
-		</head>
 
-		<body>
-			<div id="mobius-login-body">
-			  <p id="mobius-login-heading">
-			    MOBIUS
-			  </p>
-			  <span class="mobius-incorrect-description">Incorrect Email or Password</span>
-			  <input type="email" class="email-transparent mobius-email-input" placeholder="Email" value="">
-			  <div class="mobius-password-container" style="margin-bottom: 20px;">
-			    <input type="password" class="mobius-password-input" placeholder="Password" value="">
-			    <div class="my-toggle hideShowPassword-toggle-hide" style="position: absolute;">SHOW</div>
-			  </div>
-			  <div id="mobius-submit-button">
-			    <span>Log In</span>
-			  </div>
-				<div class="g-signin2" data-onsuccess="onSignIn"></div>
-				<a href="#" onclick="signOut();">Sign out</a>
-			</div>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-			<script src="https://apis.google.com/js/platform.js" async defer></script>
-			<script>
-				function onSignIn(googleUser) {
-					var profile = googleUser.getBasicProfile();
-					console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
-					console.log("Name: " + profile.getName());
-					console.log("Image URL: " + profile.getImageUrl());
-					console.log("Email: " + profile.getEmail());
+{% block head %}
+    <meta name="google-signin-client_id" content="102629415692-92fn510gpjosketphv6i2gbs1ds6o64l.apps.googleusercontent.com">
+    <link rel="stylesheet" type="text/css" href="{% static 'mobius/login.css' %}">
+{% endblock %}
 
-					window.location.replace("test.html");
-				}
-				function signOut() {
-					var auth2 = gapi.auth2.getAuthInstance();
-					auth2.signOut().then(function () {
-						console.log("User signed out.");
-					});
-				}
-			</script>
-		</body>
-	</html>
+{% block body %}
+    <div id="mobius-login-body">
+    <p id="mobius-login-heading">
+        Login
+    </p>
+    <span class="mobius-incorrect-description">Incorrect Email or Password</span>
+    <input type="email" class="email-transparent mobius-email-input" placeholder="Email" value="">
+    <div class="mobius-password-container" style="margin-bottom: 20px;">
+        <input type="password" class="mobius-password-input" placeholder="Password" value="">
+        <div class="my-toggle hideShowPassword-toggle-hide" style="position: absolute;">SHOW</div>
+    </div>
+    <div id="mobius-submit-button">
+        <span>Log In</span>
+    </div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log("Name: " + profile.getName());
+            console.log("Image URL: " + profile.getImageUrl());
+            console.log("Email: " + profile.getEmail());
+
+            window.location.replace({% url "mobius:profile" %})
+        }
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log("User signed out.");
+            });
+        }
+    </script>
+{% endblock %}
