@@ -2,7 +2,6 @@
 {% load staticfiles %}
 
 {% block head %}
-    <meta name="google-signin-client_id" content="102629415692-92fn510gpjosketphv6i2gbs1ds6o64l.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="{% static 'mobius/login.css' %}">
 {% endblock %}
 
@@ -26,7 +25,6 @@
 {% endblock %}
 
 {% block script %}
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -35,7 +33,15 @@
             console.log("Image URL: " + profile.getImageUrl());
             console.log("Email: " + profile.getEmail());
 
-            window.location.replace({% url "mobius:profile" %})
+            var id_token = googleUser.getAuthResponse().id_token;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', {% url 'mobius:profile' %});
+            xhr.setRequestHeader('X-CSRFToken', "{{ csrf_token }}");
+            xhr.onload = function() {
+              console.log('Signed in as: ' + xhr.responseText);
+            };
+            xhr.send('idtoken=' + id_token);
         }
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();

@@ -1,1 +1,10 @@
 {% extends "mobius/base.html" %}
+{% block body %}
+    <div>
+        <p>
+            Name: {{ name }}<br>
+            Email: {{ email }}<br>
+        </p>
+        <img src="{{ imageUrl }}">
+    </div>
+{% endblock %}

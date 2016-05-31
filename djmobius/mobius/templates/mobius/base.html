@@ -2,6 +2,7 @@
 <html lang="en-US">
     <head>
         <meta charset="utf-8" />
+        <meta name="google-signin-client_id" content="102629415692-92fn510gpjosketphv6i2gbs1ds6o64l.apps.googleusercontent.com">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>Mobius</title>
@@ -13,7 +14,10 @@
     <body>
         {% block body %}
         {% endblock %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
         {% block script %}
         {% endblock %}
     </body>
